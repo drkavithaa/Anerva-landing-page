@@ -1,0 +1,9 @@
+# The original 7 MB brand export — a full screenshot of the reference design with
+# the logo cropped out by viewBox. Superseded by the traced assets/anerva-mark.svg
+# (4 KB, IoU 0.9995) and no longer referenced by the page.
+assets/anerva-logo.svg
+
+# Local scratch
+node_modules/
+.DS_Store
+Thumbs.db

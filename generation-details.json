@@ -1,0 +1,33 @@
+{
+  "storyboard": {
+    "id": "a4fdf7f5-a7cb-449b-a4b0-983d41870d7d",
+    "model": "gpt_image_2_5",
+    "resolution": "4k",
+    "quality": "max",
+    "aspect_ratio": "16:9",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Iue2eJC5HyL872KrImCDMje50H/hf_20260916_080445_a4fdf7f5-a7cb-449b-a4b0-983d41870d7d.png"
+  },
+  "film": {
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Iue2eJC5HyL872KrImCDMje50H/hf_20260916_080653_4770accb-c146-4c8e-9d75-4a434917daea.mp4",
+    "thumbnail_note": "Tool thumbnail is storyboard, derive exact first-frame poster from encoded clip.",
+    "id": "4770accb-c146-4c8e-9d75-4a434917daea",
+    "model": "cinematic_studio_3_0",
+    "resolution": "4k",
+    "duration": 15,
+    "aspect_ratio": "16:9",
+    "audio": false,
+    "referenceRole": "image",
+    "referenceId": "a4fdf7f5-a7cb-449b-a4b0-983d41870d7d",
+    "prompt": "ONE SINGLE CONTINUOUS 15-SECOND BEAUTY FILM. The provided image is a SIX-PANEL STORYBOARD: use it solely as style, subject, color and motion progression reference. Never show the grid, panels or a static storyboard in the output; the video starts immediately as one full-frame cinematic close portrait. World grammar: ultra-refined cinematic beauty portrait in deep midnight navy #061827 atmosphere, translucent slow-flowing cerulean #54AEE7 and lavender #9FA4DA light-wave ribbons with a restrained muted-rose #C786AA glint, immaculate high-end editorial photography, sharp eyes and eyelashes, natural detailed skin, soft directional left key and soft lilac rim, no plastic retouching, clean dark left half for eventual HTML typography. A beautiful sophisticated adult woman age about 30, poised expressive face, dark slicked-back hair, elegant dark high-neck clothing. A sharp, luminous, premium fashion portrait with natural fine skin texture and beautiful facial structure. Place the woman on the right-central half: eye around x=69%, y=35%, head fully within frame, left 45% clean low-detail dark navy atmospheric space. Start in flattering three-quarter profile gazing toward the dark space, shoulders relaxed. Camera makes only an almost imperceptible 3% push-in across all 15 seconds, never reframes. 0-4 seconds: very slow calm breathing, one thin ethereal cerulean light ribbon flows smoothly left to right toward her temple. 4-8 seconds: wave grazes her temple and cheek like refracted light on skin, she responds with one natural very slow blink and subtly inclines her head just 4 degrees; face stays crisp and real. 8-12 seconds: second delicate lavender light wave glides along cheek and shoulder, mouth and brow gently soften into a barely perceptible peaceful smile. 12-15 seconds: she opens her eyes into a serene confident expression; the ribbons float behind her and settle into graceful flowing arcs. The ribbons flow continuously with coherent physics like diaphanous luminous silk, never splash water, never conceal face, never distort the face. Skin responds to wave contact with delicate traveling highlights only. Her expression visibly evolves from attentive to softly peaceful, naturally and without exaggerated smile. No cuts, no camera shake, no fast motion, no gesture, no lip sync, no speech, no mouth talking, no blinking repeatedly, no face morphing, no double exposure, no heavy motion blur, no fog obscuring face. Slow steady motion only, locked exposure, locked white balance, no flicker. Every frame is sharply detailed and works as a held still. No on-screen text, no letters, no logos, no watermark, no UI. Silent."
+  },
+  "cover": {
+    "id": "c004f5ee-34a9-44b6-bebe-68a16875fff9",
+    "model": "gpt_image_2_5",
+    "resolution": "4k",
+    "quality": "max",
+    "aspect_ratio": "3:2",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Iue2eJC5HyL872KrImCDMje50H/hf_20260916_080659_c004f5ee-34a9-44b6-bebe-68a16875fff9.png",
+    "prompt": "One full-frame ultra-refined cinematic editorial beauty scene for an independent premium developmental-performance brand, 3:2 landscape. A beautiful sophisticated adult woman age about 30 in flattering three-quarter profile, poised expressive face, dark slicked-back hair, elegant dark high-neck clothing, luminous sharp eyes and eyelashes, natural detailed skin with no plastic retouching; serene confident almost-smile. Position her right-of-center, head and upper shoulders fill 65 percent of frame height; no hands. Surround her with three graceful transparent flowing light-wave ribbons: a cerulean silk-like arc drifting toward temple, a subtle lavender sweep crossing behind shoulder, and one muted rose reflected highlight around hair edge. Waves are coherent diaphanous light, not water and not smoke; face fully clear. Midnight navy #061827 background with elegant low-detail cerulean #54AEE7, lavender #9FA4DA, muted rose #C786AA atmosphere. Reserve dark negative space across left 43 percent and upper left for later code-composited brand/logo and headline, no lettering in this generation. Soft directional left key, soft lilac rim, restrained high-fashion grade, exceptional facial definition and refined photographic realism. Preserve same face, wardrobe, light direction and color look of provided generated storyboard, but create one standalone photograph, not a collage and not a storyboard. No text, no letters, no logos, no captions, no UI."
+  },
+  "note": "A newly generated adult portrait; source user reference was not passed to generation after auto-review rejection. Original logo/copy should be composited by site code."
+}

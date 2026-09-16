@@ -1,0 +1,55 @@
+<!doctype html><meta charset="utf-8"><title>layout check</title>
+<style>
+ body{margin:0;background:#0b1220;color:#dfe9f5;font:13px/1.6 ui-monospace,monospace}
+ #out{padding:16px;white-space:pre-wrap}
+ iframe{position:fixed;left:-99999px;top:0;border:0}
+ .ok{color:#7ee2a8}.bad{color:#ff9d9d}
+</style>
+<div id="out">running…</div>
+<script>
+const WIDTHS = [360, 390, 414, 600, 768, 834, 1024, 1180, 1280, 1440, 1680, 1920, 2560];
+const out = document.getElementById('out');
+const lines = [];
+
+function test(w) {
+  return new Promise(res => {
+    const f = document.createElement('iframe');
+    f.width = w; f.height = 900;
+    f.src = 'index.html?nointro';
+    f.onload = () => {
+      setTimeout(() => {
+        const d = f.contentDocument, win = f.contentWindow;
+        d.querySelectorAll('.rise').forEach(n => n.dataset.in = 'true');
+        const cw = d.documentElement.clientWidth;
+        const sw = d.documentElement.scrollWidth;
+        const offenders = [...d.querySelectorAll('body *')]
+          .filter(n => {
+            const s = win.getComputedStyle(n);
+            if (s.position === 'fixed' || s.display === 'none' || s.visibility === 'hidden') return false;
+            if (n.closest('.rail-x')) return false;          // intentionally scrollable
+            const r = n.getBoundingClientRect();
+            return r.width > 0 && (r.right > cw + 2 || r.left < -2);
+          })
+          .slice(0, 6)
+          .map(n => `${n.tagName.toLowerCase()}.${(n.className || '').toString().trim().split(/\s+/)[0] || '—'}`);
+        // tap-target check
+        const small = [...d.querySelectorAll('a,button')]
+          .filter(n => { const r = n.getBoundingClientRect(); return r.width > 0 && (r.height < 24 || r.width < 24); })
+          .slice(0, 4).map(n => `${n.tagName.toLowerCase()}.${(n.className||'').toString().trim().split(/\s+/)[0]||'—'}`);
+        const overflow = sw > cw + 2;
+        lines.push(`${String(w).padStart(5)}px  ${overflow ? 'OVERFLOW ' + sw + '>' + cw : 'ok'}${offenders.length ? '  ← ' + offenders.join(', ') : ''}${small.length ? '\n         small targets: ' + small.join(', ') : ''}`);
+        f.remove();
+        res();
+      }, 1400);
+    };
+    document.body.append(f);
+  });
+}
+
+(async () => {
+  for (const w of WIDTHS) { await test(w); out.textContent = lines.join('\n'); }
+  const bad = lines.filter(l => l.includes('OVERFLOW')).length;
+  out.textContent = lines.join('\n') + `\n\n${bad ? '✗ ' + bad + ' width(s) overflow' : '✓ no horizontal overflow at any width'}`;
+  document.title = bad ? 'FAIL ' + bad : 'PASS';
+})();
+</script>

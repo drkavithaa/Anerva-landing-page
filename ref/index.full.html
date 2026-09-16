@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ANERVA — Neural Architecture</title>
+<meta name="theme-color" content="#04101c">
+<meta name="description" content="ANERVA trains the brain–body system for stability, clarity, self-regulation and adaptive performance under real-world demand. Language for what you already sense.">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="The system beneath your performance.">
+<meta property="og:description" content="A developmental and performance system in the discipline of Neural Architecture. Not therapy. Not medical treatment.">
+<meta property="og:image" content="assets/film/poster-1920.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/anerva-mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/anerva-lockup.png">
+
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/playfair-display-normal-latin.woff2" crossorigin>
+<link rel="preload" as="image" href="assets/film/poster-1920.jpg" fetchpriority="high">
+
+<link rel="stylesheet" href="assets/css/anerva.css">
+<link rel="stylesheet" href="assets/css/hero.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/spine.css">
+<link rel="stylesheet" href="assets/css/rhythm.css">
+
+<script>
+/* Set before the document finishes loading, or the browser restores the previous
+   scroll position and the opening aperture runs over a mid-page view. */
+document.documentElement.classList.add('js');
+try{ if(sessionStorage.getItem('anerva:seen')!=='1') history.scrollRestoration='manual'; }catch(e){}
+</script>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ════════════════════════ THE RAIL ════════════════════════
+     Chapter, elapsed film, state, contents — and the honesty telemetry.
+     "SENT 0 · STORED 0 · 3P 0" is literal and verifiable: this page makes
+     no network request beyond its own assets. -->
+<aside class="rail" aria-label="Film and section state">
+  <a class="rail__mark" href="#top" aria-label="ANERVA — home"><img src="assets/anerva-mark.svg" alt="" width="22" height="16"></a>
+  <div class="rail__state">
+    <span class="rail__ch" id="railCh">00</span>
+    <span class="rail__name" id="railName">Hero</span>
+    <span class="rail__time" id="railTime">0.0s / 13.8s</span>
+    <span class="rail__hold" id="railHold" data-on="false">Hold</span>
+  </div>
+  <nav class="rail__toc" aria-label="Contents">
+    <a href="#pattern">The pattern</a>
+    <a href="#framework">The framework</a>
+    <a href="#method">The method</a>
+    <a href="#pathways">The pathways</a>
+    <a href="#measurement">What we know</a>
+    <a href="#founder">The founder</a>
+  </nav>
+  <p class="rail__tele" id="railTele">Sent <b>0</b> · Stored <b>0</b> · 3P <b>0</b></p>
+  <span class="rail__prog" aria-hidden="true"><i id="railProg"></i></span>
+</aside>
+<div class="railtop" aria-hidden="true"><i id="railTop"></i></div>
+<p class="railchip" aria-hidden="true"><span id="railChip">01 / 08</span></p>
+
+<!-- ════════════════════════ NAV ════════════════════════ -->
+<header class="nav" id="nav" data-stuck="false">
+  <a class="nav__brand" href="#top" aria-label="ANERVA — home">
+    <img src="assets/anerva-lockup.png" alt="ANERVA" width="1020" height="180" decoding="async">
+  </a>
+  <nav class="nav__links" aria-label="Sections">
+    <a href="#pattern">The pattern</a>
+    <a href="#framework">The framework</a>
+    <a href="#method">The method</a>
+    <a href="#pathways">The pathways</a>
+    <a href="#measurement">What we know</a>
+    <a href="#founder">The founder</a>
+  </nav>
+  <a class="btn btn--primary" href="#begin">Begin the assessment</a>
+  <button class="nav__menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+    <i></i><i></i><i></i>
+  </button>
+</header>
+
+<div class="menu" id="menu" data-open="false" aria-hidden="true">
+  <a href="#pattern" style="--i:0">The pattern <span>01</span></a>
+  <a href="#framework" style="--i:1">The framework <span>02</span></a>
+  <a href="#method" style="--i:2">The method <span>03</span></a>
+  <a href="#pathways" style="--i:3">The pathways <span>04</span></a>
+  <a href="#measurement" style="--i:4">What we know <span>05</span></a>
+  <a href="#founder" style="--i:5">The founder <span>06</span></a>
+  <a class="btn btn--primary" href="#begin" style="--i:6">Begin the assessment</a>
+</div>
+
+<!-- The opening: the film is first seen through the ANERVA mark, then absorbed. -->
+<div class="opening" id="opening" aria-hidden="true"><p class="opening__cap">Neural Architecture</p></div>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ════════════════════════ 1 · HERO ════════════════════════ -->
+<section class="hero" id="hero" data-intro="running" aria-labelledby="heroTitle">
+  <div class="hero__media" aria-hidden="true">
+    <img class="hero__poster" src="assets/film/poster-1920.jpg" alt="" width="1920" height="1080" fetchpriority="high" decoding="async">
+    <video class="hero__video" id="heroVideo" muted loop playsinline preload="none"
+           poster="assets/film/poster-1920.jpg" tabindex="-1" aria-hidden="true"></video>
+  </div>
+  <div class="hero__grade" aria-hidden="true"></div>
+  <div class="hero__bloom" aria-hidden="true"></div>
+  <canvas class="hero__signal" id="heroSignal" aria-hidden="true"></canvas>
+  <p class="sr-only">Background film: a close portrait, lit by slow ribbons of blue and lavender light moving across the frame. The film is silent and decorative.</p>
+
+  <div class="hero__inner">
+    <p class="eyebrow hero__eyebrow">Neural Architecture</p>
+    <h1 class="hero__title" id="heroTitle">
+      <span class="ln" style="--i:0"><b>The system</b></span>
+      <span class="ln" style="--i:1"><b>beneath your</b></span>
+      <span class="ln" style="--i:2"><b>performance.</b></span>
+    </h1>
+    <p class="hero__sub">ANERVA trains the brain–body system for stability, clarity, self-regulation and adaptive performance under real-world demand.</p>
+    <p class="hero__note">A developmental and performance system. Not therapy. Not medical treatment.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#begin">Begin the assessment
+        <svg class="btn__arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M1 5h13M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></a>
+      <a class="btn btn--ghost" href="#measurement">What this is, and what it is not</a>
+    </div>
+    <p class="hero__ctanote">Consent first, then the questions. No account. No app.</p>
+  </div>
+
+  <div class="hero__foot">
+    <a class="scrollcue" href="#pattern">
+      <span class="scrollcue__rail" aria-hidden="true"></span>
+      <span>The pattern beneath it</span>
+    </a>
+    <div class="filmctl" role="group" aria-label="Background film">
+      <button class="filmctl__btn" id="filmBtn" type="button" aria-pressed="false" aria-label="Play the background film">
+        <svg class="i-play" viewBox="0 0 12 14" aria-hidden="true"><path d="M1 1l10 6-10 6V1z"/></svg>
+        <svg class="i-pause" viewBox="0 0 12 14" aria-hidden="true"><path d="M1 1h3.2v12H1zM7.8 1H11v12H7.8z"/></svg>
+      </button>
+      <span class="filmctl__bar" aria-hidden="true"><i id="filmBar"></i></span>
+      <span class="mono" id="filmMsg"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ 2 · THE PATTERN ════════════════════════ -->
+<section class="sec pattern" id="pattern" aria-labelledby="patternH">
+  <div class="wrap">
+    <div class="pattern__grid">
+      <div class="flow flow-lg">
+        <p class="eyebrow rise">The pattern</p>
+        <h2 id="patternH" class="rise" style="--i:1">High capability does not always produce internal stability.</h2>
+        <p class="pattern__sub rise" style="--i:2">Performance is rarely the first thing to fail. Recovery is.</p>
+        <div class="pattern__body rise" style="--i:3">
+          <p>Many capable people do not lack knowledge, ambition or intelligence. Their difficulty is that their internal capacity becomes unreliable under sustained demand.</p>
+          <p>The output still arrives. What changes is the price of producing it.</p>
+        </div>
+        <blockquote class="pull rise" style="--i:4">You may be praised for the very adaptation that is becoming unsustainable.</blockquote>
+        <p class="body rise" style="--i:5">ANERVA does not read this as a character defect or a motivation problem. It asks a different question.</p>
+        <p class="question rise" style="--i:6">“How is this person’s brain–body system currently organised around demand, and what capacities must be trained for a more stable and adaptive response?”</p>
+        <div class="closing-pair rise" style="--i:7">
+          <b>You are not broken. You are patterned.</b>
+          <small>This is never used to deny illness, trauma, disability, structural adversity or a person’s need for medical or psychological care.</small>
+        </div>
+      </div>
+
+      <div class="rise" style="--i:2">
+        <p class="meta" style="letter-spacing:.14em;text-transform:uppercase;font-size:var(--step--2);color:var(--fg-4)">The cost shows up as</p>
+        <ol class="costs" role="list">
+          <li><span>01</span> chronic internal pressure</li>
+          <li><span>02</span> overcontrol or vigilance</li>
+          <li><span>03</span> cycles of overactivation and depletion</li>
+          <li><span>04</span> loss of clarity under emotional load</li>
+          <li><span>05</span> poor recovery</li>
+          <li><span>06</span> disconnection from bodily signals</li>
+          <li><span>07</span> a widening gap between external competence and internal stability</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ 2B · POSITIONING BAND ════════════════════════ -->
+<section class="band" aria-label="What ANERVA offers">
+  <div class="band__media" aria-hidden="true">
+    <img src="assets/film/poster-1920.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+  </div>
+  <div class="wrap">
+    <p class="band__line is-clipped rise">Language for what you already sense.</p>
+    <p class="band__sub rise" style="--i:1">What people describe is not new information. It is a name for something they had already noticed and could not place.</p>
+  </div>
+</section>
+
+<!-- ════════════════════════ 3 · THE FRAMEWORK ════════════════════════ -->
+<section class="sec framework" id="framework" aria-labelledby="frameworkH">
+  <div class="wrap">
+    <header class="sec__head sec__head--wide">
+      <p class="eyebrow rise">The framework</p>
+      <h2 id="frameworkH" class="headline rise" style="--i:1">Why you came. How your system is running.</h2>
+    </header>
+    <p class="lede rise measure" style="--i:2;margin-block-start:1.2rem">A client category describes the primary human problem that brings a person into ANERVA. An operating mode describes the temporary organisation through which the brain–body system is responding to demand.</p>
+    <p class="boundary rise" style="--i:3">Neither is a diagnosis, identity, personality type, or protocol. ANERVA uses a proprietary, non-diagnostic category and Operating Mode framework.</p>
+
+    <!-- 3A — the seven entry categories: removed at the founder's request.
+         The canonical C1–C7 names still appear in the formulation instrument below,
+         so the framework remains readable without the accordion. -->
+
+    <!-- 3B — the eight operating modes, as a field -->
+    <div class="modes">
+      <h3 class="rise" style="font-size:var(--step-2);font-weight:500;letter-spacing:-.022em">Eight operating modes</h3>
+      <p class="meta rise measure" style="--i:1;margin-block-start:.5rem">A mode is a contextual configuration, not a person’s essence. It is time-bound, attached to a context, and it can change within a week. These eight are a set, not a scale — there is no first and no last.</p>
+
+      <div class="modes__ctx rise" id="ctxBar" style="--i:2;margin-block-start:clamp(1.4rem,3.4vh,2.2rem)" role="group" aria-label="Choose a context">
+        <b>In the context of</b>
+      </div>
+
+      <div class="field">
+        <div class="ring" id="ring" role="group" aria-label="The eight operating modes">
+          <svg class="ring__svg" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width=".22" opacity=".18"/>
+            <circle cx="50" cy="50" r="27" fill="none" stroke="currentColor" stroke-width=".18" opacity=".1" stroke-dasharray="1 2.4"/>
+            <circle class="ring__halo" cx="50" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width=".4" opacity=".0" id="ringHalo"/>
+          </svg>
+        </div>
+        <div class="modecard" id="modecard" aria-live="polite"></div>
+      </div>
+
+      <div class="behaviours rise">
+        <div><b>Modes alternate</b><p>Compensatory Overdrive can be followed by Depleted Conservation.</p></div>
+        <div><b>Modes nest</b><p>Predictive Vigilance can maintain Rigid Control.</p></div>
+        <div><b>Modes are context-specific</b><p>Regulated Engagement at work may coexist with Protective Disconnection in intimacy.</p></div>
+        <div><b>Modes conceal one another</b><p>Apparent calm can reflect Rigid Control rather than flexible regulation.</p></div>
+      </div>
+    </div>
+
+    <!-- 3C — the formulation instrument -->
+    <div class="instrument">
+      <h3 class="rise" style="font-size:var(--step-2);font-weight:500;letter-spacing:-.022em">Four separate questions</h3>
+      <p class="meta rise measure" style="--i:1;margin-block-start:.5rem">Category, mode, layer and phase are independent decisions. None is derived from another. Turn any dial and watch the other three hold.</p>
+
+      <div class="instrument__grid" style="margin-block-start:clamp(1.4rem,3.4vh,2.2rem)">
+        <div class="dials rise" id="dials"></div>
+        <aside class="readout rise" style="--i:1" aria-label="Formulation readout">
+          <p class="readout__label">Formulation</p>
+          <p class="readout__sentence" id="readSentence" aria-live="polite"></p>
+          <hr class="readout__rule">
+          <div class="readout__count">
+            <span class="readout__num mono" id="readCount">2,072</span>
+            <span class="readout__cap">distinct entry formulations — seven entry categories, up to two ranked secondaries, and eight operating modes. Add context, resource and recovery modifiers and the framework distinguishes 157,472.</span>
+          </div>
+          <hr class="readout__rule">
+          <p class="readout__note"><b>Capacity, not validity.</b> This is how many distinct formulations ANERVA can express. It is not evidence that the framework is validated, and it is not a count of human types.</p>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ 4 · THE METHOD — light band ════════════════════════ -->
+<svg class="seam" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true" style="--len:1900"><path d="M0 46C75 46 75 14 150 14S225 46 300 46 375 14 450 14 525 46 600 46 675 14 750 14 825 46 900 46 975 14 1050 14 1125 46 1200 46"/></svg>
+<section class="sec lite" id="method" aria-labelledby="methodH" data-in="false">
+  <div class="band-sheet" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="sec__head sec__head--wide">
+      <p class="eyebrow rise">The method</p>
+      <h2 id="methodH" class="headline rise" style="--i:1">The system proposes. A human assigns.</h2>
+    </header>
+    <p class="lede rise measure" style="--i:2;margin-block-start:1.2rem">Scoring is arithmetic, never a model. No language model produces a score, a rank or a category. That boundary is permanent.</p>
+
+    <div class="method__grid" id="methodGrid"></div>
+
+    <div class="aibox rise">
+      <h3>Where AI is, and is not.</h3>
+      <p>AI never assigns a category or mode, never scores, never decides escalation, never publishes anything to a client. It drafts narrative from a confirmed assignment, and assists with synthesis, retrieval and language review. Every draft is held unpublished until a human reviews it.</p>
+      <p>Safety rules are arithmetic too. A raised flag stops the process and routes to a person, with no model involved in that decision, ever.</p>
+    </div>
+
+    <p class="body rise measure" style="margin-block-start:clamp(1.6rem,4vh,2.4rem)">Data informs; it does not define. No score, category, biomarker, device or model can fully represent a human being.</p>
+  </div>
+</section>
+
+<svg class="seam seam--flip" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true" style="--len:2300"><path d="M0 46C50 46 50 14 100 14S150 46 200 46 250 14 300 14 350 46 400 46 450 14 500 14 550 46 600 46 650 14 700 14 750 46 800 46 850 14 900 14 950 46 1000 46 1050 14 1100 14 1150 46 1200 46"/></svg>
+<!-- ════════════════════════ 5 · THE PATHWAYS ════════════════════════ -->
+<section class="sec pathways" id="pathways" aria-labelledby="pathwaysH">
+  <div class="wrap">
+    <header class="sec__head sec__head--wide">
+      <p class="eyebrow rise">The pathways</p>
+      <h2 id="pathwaysH" class="headline rise" style="--i:1">Two depths. One architecture.</h2>
+    </header>
+    <p class="lede rise measure" style="--i:2;margin-block-start:1.2rem">Category count, symptom intensity and external status do not select the pathway. The work does.</p>
+
+    <div class="paths">
+      <article class="path rise">
+        <p class="path__dur">Six weeks, nominal</p>
+        <h3 class="path__name">ANA Core</h3>
+        <p class="path__b">Foundational architecture. Mapping the pattern, stabilising the system, interrupting the old response, and beginning to install a new one.</p>
+      </article>
+      <article class="path rise" style="--i:1">
+        <p class="path__dur">Twelve weeks, nominal</p>
+        <h3 class="path__name">ANA Premium</h3>
+        <p class="path__b">Continues only where the earlier work reveals a clear, in-scope architecture problem requiring deeper installation, complexity integration or identity-level stabilisation.</p>
+      </article>
+      <article class="path rise" style="--i:2">
+        <p class="path__dur">Every week, either pathway</p>
+        <h3 class="path__name">What a week contains</h3>
+        <p class="path__b">Weekly protocols, set by the architect after the session. Daily check-ins, under a minute each. A weekly review that decides what changes. Re-measurement at weeks 6 and 12.</p>
+      </article>
+    </div>
+
+    <div class="thread">
+      <h3 class="rise" style="font-size:var(--step-2);font-weight:500;letter-spacing:-.022em">The phase ladder</h3>
+      <p class="meta rise measure" style="--i:1;margin-block-start:.5rem">Every client enters at Phase 0. Phases advance on the architect’s explicit decision after a session — never on a calendar.</p>
+      <div class="thread__list rise" id="phases" style="--i:2;margin-block-start:clamp(1.2rem,3vh,2rem)"></div>
+    </div>
+
+    <div class="honesty rise">
+      <p>Six and twelve weeks are nominal structures, not a schedule and not a promise of change within that time.</p>
+      <p>Change timelines vary widely between individuals, which is why we measure at week 0 and again at weeks 6 and 12.</p>
+      <p>If Core does the work and deeper work is unnecessary, Core is where it ends. Premium is never manufactured as the expected next sale.</p>
+    </div>
+
+    <div class="teams rise">
+      <h3>For teams</h3>
+      <p>Sustainable performance depends not only on skill, but on how people regulate, decide and recover under complexity. ANERVA develops that adaptive capacity without turning human data into surveillance.</p>
+      <p>The organisation receives an anonymous distribution map only. No names. No individual attribution. No individual categories or modes. Each participant receives their own profile privately. Below five participants, the cohort view does not render at all.</p>
+      <p class="meta">This is both the legal position and the reason participants answer honestly rather than strategically.</p>
+      <p><a class="btn btn--ghost" href="#begin">Enquire about a team cohort</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ 6 · WHAT WE KNOW ════════════════════════ -->
+<svg class="seam" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true" style="--len:3400"><path d="M0 46C31 46 31 14 62 14S93 46 125 46 156 14 187 14 218 46 250 46 281 14 312 14 343 46 375 46 406 14 437 14 468 46 500 46 531 14 562 14 593 46 625 46 656 14 687 14 718 46 750 46 781 14 812 14 843 46 875 46 906 14 937 14 968 46 1000 46 1031 14 1062 14 1093 46 1125 46 1156 14 1187 14 1200 30 1200 46"/></svg>
+<section class="sec paper" id="measurement" aria-labelledby="measurementH" data-in="false">
+  <div class="paper__sheet" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="sec__head sec__head--wide">
+      <p class="eyebrow rise">What we know, and what we do not</p>
+      <h2 id="measurementH" class="headline rise" style="--i:1">We would rather be exact than impressive.</h2>
+    </header>
+    <p class="lede rise measure" style="--i:2;margin-block-start:1.2rem">ANERVA states what it knows, what it infers, what it is testing and what it does not yet know. This section is the last of those.</p>
+
+    <div class="know__grid">
+      <div class="know__item rise"><b>Reliability, not accuracy.</b><p>The scoring sheet applies the same rules to the same answers every time. That is reliability. Accuracy is a different claim, and it requires test–retest, inter-rater agreement and convergent validity. None of that exists yet, so we do not claim it.</p></div>
+      <div class="know__item rise" style="--i:1"><b>No outcome dataset yet.</b><p>Week-0, week-6 and week-12 measurement is being put in place now. Until it has run, there are no outcome figures to publish, and we will not manufacture any.</p></div>
+      <div class="know__item rise" style="--i:2"><b>Proprietary, not validated.</b><p>The seven categories and eight modes are proprietary ANERVA constructs. Their practical usefulness does not permit us to present them as validated scientific types.</p></div>
+      <div class="know__item rise" style="--i:3"><b>A defined path, not a promise.</b><p>Validation has a sequence: content validity, cognitive interviews, inter-rater reliability, context sensitivity, construct validity, incremental utility, fairness and safety, then prospective validation. Predictive value, null findings and limits will all be reported.</p></div>
+    </div>
+
+    <!-- The validation sequence, rendered as it actually stands: nothing lit. -->
+    <div class="calib rise">
+      <p class="calib__cap">Stage status · 0 of 8 complete · not started</p>
+      <div class="calib__bar" role="img" aria-label="Validation sequence: none of the eight stages is complete.">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="calib__names" aria-hidden="true">
+        <span>Content validity</span><span>Cognitive interviews</span><span>Inter-rater</span><span>Context sensitivity</span>
+        <span>Construct validity</span><span>Incremental utility</span><span>Fairness &amp; safety</span><span>Prospective</span>
+      </div>
+    </div>
+
+    <!-- The only numeric display permitted anywhere on this page. -->
+    <div class="weeks rise" style="--i:1">
+      <p class="calib__cap" style="margin-block-end:.7rem">We measure here</p>
+      <div class="weeks__rule" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="weeks__lab"><span>Week 0</span><span>Week 6</span><span>Week 12</span></div>
+      <p class="meta" style="margin-block-start:.7rem">Change timelines vary widely between individuals, which is why we measure at week 0 and again at weeks 6 and 12.</p>
+    </div>
+
+    <h3 class="rise" style="margin-block-start:clamp(2.4rem,6vh,4rem);font-size:var(--step-2);font-weight:500;letter-spacing:-.022em">How sure we are, said out loud</h3>
+    <p class="meta rise measure" style="--i:1;margin-block-start:.5rem">Every assignment carries one of three evidence levels. They are part of the record, not a footnote to it.</p>
+    <div class="evidence rise" style="--i:2" id="evidence"></div>
+
+    <h3 class="rise" style="margin-block-start:clamp(2.4rem,6vh,4rem);font-size:var(--step-2);font-weight:500;letter-spacing:-.022em">Three things you will not find here</h3>
+    <ul class="notfound rise" style="--i:1" role="list">
+      <li>A number of days by which your brain will have changed.</li>
+      <li>A score that tells you who you are.</li>
+      <li>A claim that science has established eight operating modes.</li>
+    </ul>
+
+    <div class="scope rise">
+      <h3>Scope</h3>
+      <p>ANERVA is developmental and performance-oriented. It is not psychotherapy, psychiatry, counselling or a mental-health crisis service. It is not medical diagnosis or treatment, and it is not a substitute for a licensed clinician. It is not a personality test that permanently categorises a person.</p>
+      <p>ANERVA may support people who experience stress, overwhelm, fatigue, reactivity or impaired focus. Its role in that is training and developmental support, not treatment of those conditions.</p>
+      <p>Adults only. Exclusion is not a judgement of worth. Referral is an act of care.</p>
+      <p>ANERVA is not a crisis service and is not monitored live. If you are at immediate risk, or something needs urgent medical or psychiatric attention, contact your local emergency services or a qualified clinician.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ 7 · THE FOUNDER ════════════════════════ -->
+<section class="sec founder" id="founder" aria-labelledby="founderH">
+  <div class="wrap">
+    <header class="sec__head sec__head--wide">
+      <p class="eyebrow rise">The founder</p>
+      <h2 id="founderH" class="headline rise" style="--i:1">A discipline, not merely a programme.</h2>
+    </header>
+    <div class="founder__grid" style="margin-block-start:clamp(1.6rem,4vh,2.6rem)">
+      <div>
+        <p class="founder__bio rise">Dr. Kavitha Satish Kumar is the Founder &amp; Chief Neural Architect of Nerva Systems and the creator of ANERVA. Trained as a molecular biologist and genetic engineer, she is building Neural Architecture as a disciplined framework for understanding and strengthening how the brain–body system regulates, responds, recovers and performs under demand. Her work spans system design, pattern interpretation, research stewardship and the ethical development of the ANERVA ecosystem.</p>
+        <p class="founder__bound rise" style="--i:1">She is not a physician, psychiatrist or licensed mental-health clinician, and ANERVA is not a substitute for any of them.</p>
+      </div>
+      <div>
+        <blockquote class="founder__quote rise">“Depth will precede scale; proof will precede proclamation.”</blockquote>
+        <p class="founder__close rise" style="--i:1">Every ANERVA assignment is confirmed by a person who can be held accountable for it. Today, that is one person. That is a constraint, and it is stated rather than hidden.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ 8 · BEGIN ════════════════════════ -->
+<section class="sec begin" id="begin" aria-labelledby="beginH">
+  <div class="begin__glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="begin__inner">
+      <p class="eyebrow rise" style="justify-content:center">Begin</p>
+      <h2 id="beginH" class="rise" style="--i:1">Build stability beneath performance.</h2>
+      <p class="begin__sub rise" style="--i:2">Consent, then the questions, then your primary pattern, named. And the option to talk it through.</p>
+
+      <div class="disclose rise" style="--i:3">
+        <div><b>What you get</b><p>Your primary pattern, named in plain language, what it typically costs, and one thing to notice this week.</p></div>
+        <div><b>What you do not get</b><p>Your operating mode, your secondary patterns, your modifiers, or a pathway. Those are not withheld as a tactic. They are the part that needs a conversation, and a person on the other side of it.</p></div>
+      </div>
+
+      <p class="rise" style="--i:4">
+        <a class="btn btn--primary" href="#begin" id="ctaAssessment" data-needs-destination>Begin the assessment
+          <svg class="btn__arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M1 5h13M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></a>
+      </p>
+      <p class="begin__micro rise" id="ctaNote" style="--i:5">Consent first, then the questions. No account. No app. No payment.<br>Your email is asked at the end, so we can send the result and reach you if something needs attention.<br>This is a starting read, not a conclusion.</p>
+      <p class="begin__echo rise" style="--i:6">Language for what you already sense.</p>
+      <p class="rise" style="--i:7"><a class="btn btn--ghost" href="#begin" data-needs-destination>Book a consultation — one conversation, for what the questionnaire cannot reach.</a></p>
+    </div>
+
+    <p class="declaration rise"><b>Redesign the pattern. Regulate the system. Rebuild the response.</b></p>
+  </div>
+</section>
+</main>
+
+<!-- ════════════════════════ FOOTER ════════════════════════ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <img src="assets/anerva-lockup.png" alt="ANERVA" width="1020" height="180" loading="lazy" decoding="async">
+        <p>A brand of Nerva Systems.</p>
+      </div>
+      <div class="foot__legal">
+        <p>ANERVA trains the brain–body system for stability, clarity, self-regulation and adaptive performance under real-world demand. It is developmental and performance-oriented, not medical or mental-health treatment, and it does not diagnose.</p>
+        <p>ANERVA uses a proprietary, non-diagnostic category and Operating Mode framework.</p>
+        <p><b>Adults only.</b> Separate, unticked consents. Research consent is a separate opt-in and refusing it changes nothing about the service you receive. Your data is hosted in India, encrypted in transit and at rest. Export and deletion are available from the start. No third-party analytics on the assessment.</p>
+        <p><b>ANERVA is not a crisis service and is not monitored live.</b></p>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <span>© 2026 Nerva Systems</span>
+      <span>Language for what you already sense.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/anerva.js" type="module"></script>
+</body>
+</html>

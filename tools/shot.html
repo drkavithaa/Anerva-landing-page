@@ -1,0 +1,23 @@
+<!doctype html><meta charset="utf-8"><title>shot</title>
+<style>html,body{margin:0;background:#04101c}iframe{display:block;border:0}</style>
+<script>
+// tools/shot.html?w=1440&h=900&to=framework  — renders index.html in a fixed-size
+// frame and scrolls it, so position:fixed composites correctly for screenshots.
+const q = new URLSearchParams(location.search);
+const w = +q.get('w') || 1440, h = +q.get('h') || 900, to = q.get('to') || '';
+const f = document.createElement('iframe');
+f.width = w; f.height = h; f.src = 'index.html?nointro';
+f.onload = () => {
+  const d = f.contentDocument;
+  d.querySelectorAll('.rise').forEach(n => n.dataset.in = 'true');
+  const paper = d.querySelector('.paper'); if (paper) paper.dataset.in = 'true';
+  setTimeout(() => {
+    if (to) {
+      const el = d.getElementById(to);
+      if (el) f.contentWindow.scrollTo({ top: el.offsetTop - 8, behavior: 'instant' });
+    }
+    document.title = 'ready';
+  }, 900);
+};
+document.body.append(f);
+</script>

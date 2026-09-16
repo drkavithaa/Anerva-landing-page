@@ -1,0 +1,325 @@
+@charset "utf-8";
+/* ANERVA — navigation + hero (the film, opened through the mark) */
+
+/* ============================== NAV ============================== */
+/* A floating glass capsule — the lockup, the sections, the action.
+   Translucent so the film reads through it; it thickens once the page moves. */
+.nav{
+  position:fixed;z-index:60;
+  inset-block-start:clamp(.7rem,1.8vh,1.5rem);
+  inset-inline:var(--gutter);
+  margin-inline:auto;max-inline-size:1480px;
+  display:flex;align-items:center;gap:clamp(.6rem,1.6vw,1.4rem);
+  min-block-size:clamp(56px,7.4vh,74px);
+  padding-inline:clamp(.7rem,1.5vw,1.1rem) clamp(.5rem,1vw,.7rem);
+  border:1px solid rgba(236,245,255,.34);
+  border-block-end-color:rgba(232,242,255,.13);
+  border-radius:var(--radius-pill);
+  background:linear-gradient(115deg,rgba(163,201,236,.22),rgba(186,178,222,.17));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 14px 44px -20px rgba(2,10,22,.75);
+  backdrop-filter:blur(22px) saturate(135%);
+  -webkit-backdrop-filter:blur(22px) saturate(135%);
+  transition:background var(--t-3) var(--ease-out),border-color var(--t-3) var(--ease-out),
+             box-shadow var(--t-3) var(--ease-out),min-block-size var(--t-3) var(--ease-out);
+}
+.nav[data-stuck="true"]{
+  background:linear-gradient(115deg,rgba(24,52,84,.62),rgba(32,36,72,.58));
+  border-color:rgba(232,242,255,.19);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 16px 50px -22px rgba(2,10,22,.9);
+}
+@media (min-width:1200px){
+  .nav{inset-inline:calc(96px + var(--gutter)) var(--gutter)}
+}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+  .nav{background:color-mix(in srgb,var(--ink-700) 88%,transparent)}
+}
+.nav__brand{display:flex;align-items:center;flex:none;padding:.3rem;margin:-.3rem}
+.nav__brand img{inline-size:clamp(102px,10.5vw,146px);block-size:auto}
+.nav__links{
+  display:flex;align-items:center;gap:clamp(.9rem,1.9vw,1.9rem);
+  margin-inline-start:auto;font-size:var(--step--1);color:var(--fg-3);
+}
+.nav__links a{position:relative;padding-block:.4rem;transition:color var(--t-2) var(--ease-out)}
+.nav__links a::after{
+  content:"";position:absolute;inset-block-end:0;inset-inline:0;block-size:1px;
+  background:var(--cer-400);transform:scaleX(0);transform-origin:left;
+  transition:transform var(--t-2) var(--ease-out);
+}
+.nav__links a{white-space:nowrap}
+.nav__links a:hover,.nav__links a[aria-current="true"]{color:var(--fg)}
+.nav__links a:hover::after,.nav__links a[aria-current="true"]::after{transform:scaleX(1)}
+.nav .btn{flex:none}
+/* Below 1200px the six section links cannot sit on one line beside the lockup and
+   the action without wrapping, so they move into the menu. */
+@media (max-width:1199px){ .nav__links{display:none} }
+
+.nav__menu{
+  display:none;inline-size:44px;block-size:44px;place-items:center;flex:none;
+  margin-inline-start:auto;border:1px solid var(--line);border-radius:50%;
+}
+.nav__menu i{display:block;inline-size:15px;block-size:1px;background:var(--fg);
+  transition:transform var(--t-2) var(--ease-out),opacity var(--t-1) linear}
+.nav__menu i+i{margin-block-start:5px}
+.nav__menu[aria-expanded="true"] i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav__menu[aria-expanded="true"] i:nth-child(2){opacity:0}
+.nav__menu[aria-expanded="true"] i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media (max-width:1199px){ .nav__menu{display:grid} .nav .btn{margin-inline-start:auto} .nav__menu{margin-inline-start:0} }
+@media (max-width:599px){ .nav .btn--primary{display:none} }
+
+/* slide-over menu */
+.menu{
+  position:fixed;inset:0;z-index:55;display:grid;align-content:center;gap:var(--sp-2);
+  padding:var(--gutter);background:color-mix(in srgb,var(--ink-900) 96%,transparent);
+  backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);
+  opacity:0;visibility:hidden;transition:opacity var(--t-3) var(--ease-out),visibility var(--t-3);
+}
+.menu[data-open="true"]{opacity:1;visibility:visible}
+.menu a{
+  display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+  padding-block:clamp(.7rem,2.2vh,1.15rem);border-block-end:1px solid var(--line-2);
+  font-size:var(--step-2);letter-spacing:-.02em;
+  opacity:0;transform:translateY(12px);
+}
+.menu[data-open="true"] a{animation:fadeUp 640ms var(--ease-out) forwards;
+  animation-delay:calc(var(--i,0)*55ms + 90ms)}
+.menu a span{font-size:var(--step--2);color:var(--fg-4);letter-spacing:.12em}
+.menu .btn{margin-block-start:var(--sp-5);justify-content:center}
+
+/* ============================== HERO ============================== */
+.hero{
+  position:relative;isolation:isolate;
+  min-block-size:100svh;display:grid;grid-template-rows:1fr auto;
+  padding-block:clamp(7rem,14vh,11rem) clamp(1.4rem,3.6vh,2.6rem);
+}
+.hero__media{position:absolute;inset:0;z-index:-3;overflow:hidden;background:var(--ink-900)}
+.hero__media img,.hero__media video{
+  position:absolute;inset:0;inline-size:100%;block-size:100%;
+  object-fit:cover;object-position:72% 46%;
+}
+.hero__poster{filter:saturate(.94) contrast(1.02)}
+.hero__video{opacity:0;transition:opacity 1.1s var(--ease-soft)}
+.hero__video[data-ready="true"]{opacity:1}
+
+/* the grade — protect the type side, let the light side sing */
+.hero__grade{
+  position:absolute;inset:0;z-index:-2;pointer-events:none;
+  background:
+    linear-gradient(100deg,
+      color-mix(in srgb,var(--ink-900) 95%,transparent) 0%,
+      color-mix(in srgb,var(--ink-900) 87%,transparent) 26%,
+      color-mix(in srgb,var(--ink-900) 44%,transparent) 53%,
+      color-mix(in srgb,var(--ink-900) 4%,transparent) 79%),
+    linear-gradient(to top,
+      color-mix(in srgb,var(--ink-900) 90%,transparent) 0%,
+      transparent 32%,transparent 74%,
+      color-mix(in srgb,var(--ink-900) 52%,transparent) 100%);
+}
+/* a breath of the brand gradient — alpha on a brand colour, never a new hue */
+.hero__bloom{
+  position:absolute;inset:0;z-index:-2;pointer-events:none;mix-blend-mode:screen;opacity:.45;
+  background:radial-gradient(58% 54% at 11% 13%,
+    color-mix(in srgb,var(--brand-indigo) 34%,transparent),transparent 70%);
+}
+/* the signal layer — the instrument reading the film */
+.hero__signal{position:absolute;inset:0;z-index:-1;inline-size:100%;block-size:100%;
+  pointer-events:none;opacity:.9}
+
+/* ── THE OPENING · the film arrives through the ANERVA mark, then is absorbed ──
+   Beat 1  0–1150ms   the mark opens as a window; the film moves inside it
+   Beat 2  1150–2600  the window expands until the film fills the frame
+   Beat 3  2400–3300  the chrome and the headline arrive
+   mask-size is animated directly (a <bg-size>, interpolable everywhere) rather
+   than through a registered custom property, so the sequence runs in every engine. */
+.js .hero[data-intro="running"] .hero__media,
+.js .hero[data-intro="opening"] .hero__media{
+  -webkit-mask-image:url("../anerva-mark-mono.svg");mask-image:url("../anerva-mark-mono.svg");
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-position:center;mask-position:center;
+}
+.js .hero[data-intro="opening"] .hero__media{
+  -webkit-mask-size:0 auto;mask-size:0 auto;
+  animation:apertureIn 780ms var(--ease-out) forwards;
+}
+.js .hero[data-intro="running"] .hero__media{
+  animation:apertureOut 1450ms var(--ease-out) forwards;
+}
+@keyframes apertureIn{
+  from{-webkit-mask-size:2vmin auto;mask-size:2vmin auto;opacity:0}
+  to  {-webkit-mask-size:30vmin auto;mask-size:30vmin auto;opacity:1}
+}
+@keyframes apertureOut{
+  0%  {-webkit-mask-size:30vmin auto;mask-size:30vmin auto}
+  62% {-webkit-mask-size:320vmin auto;mask-size:320vmin auto}
+  100%{-webkit-mask-size:2600vmin auto;mask-size:2600vmin auto}
+}
+/* On a phone the hero crop sits tight on the face, so a 30vmin window lands on
+   skin rather than on the light. Open wider, and re-frame to the ribbon for the
+   length of the opening only. */
+@media (max-width:599px){
+  .js .hero:is([data-intro="opening"],[data-intro="running"]) .hero__media :is(img,video){
+    object-position:56% 46%;
+  }
+  .js .hero[data-intro="opening"] .hero__media{animation-name:apertureInSm}
+  .js .hero[data-intro="running"] .hero__media{animation-name:apertureOutSm}
+  @keyframes apertureInSm{
+    from{-webkit-mask-size:3vmin auto;mask-size:3vmin auto;opacity:0}
+    to  {-webkit-mask-size:58vmin auto;mask-size:58vmin auto;opacity:1}
+  }
+  @keyframes apertureOutSm{
+    0%  {-webkit-mask-size:58vmin auto;mask-size:58vmin auto}
+    62% {-webkit-mask-size:430vmin auto;mask-size:430vmin auto}
+    100%{-webkit-mask-size:2600vmin auto;mask-size:2600vmin auto}
+  }
+}
+
+/* the opening ground: everything else is held back until the film is absorbed */
+.opening{
+  position:fixed;inset:0;z-index:80;display:grid;align-content:end;justify-items:center;
+  padding-block-end:clamp(3rem,13vh,9rem);
+  pointer-events:none;background:transparent;
+}
+.opening__cap{
+  margin:0;font-size:var(--step--2);letter-spacing:.36em;text-transform:uppercase;
+  color:var(--fg-3);opacity:0;text-align:center;
+}
+.js .hero[data-intro="opening"] ~ .opening .opening__cap,
+.js body:has(.hero[data-intro="opening"]) .opening__cap{
+  animation:capIn 700ms var(--ease-out) 420ms forwards;
+}
+@keyframes capIn{to{opacity:1}}
+.js body:has(.hero[data-intro="running"]) .opening__cap{
+  animation:capOut 420ms var(--ease-out) forwards;
+}
+@keyframes capOut{from{opacity:1}to{opacity:0}}
+.js body:has(.hero[data-intro="done"]) .opening{display:none}
+
+/* chrome is held back until the film has filled the frame */
+.js body:has(.hero[data-intro="opening"]) :is(.nav,.rail,.railtop,.railchip),
+.js body:has(.hero[data-intro="running"]) :is(.nav,.rail,.railtop,.railchip){
+  opacity:0;pointer-events:none;
+}
+.js body:has(.hero[data-intro="done"]) :is(.nav,.rail,.railtop,.railchip){
+  animation:fadeUp 800ms var(--ease-out) backwards;
+}
+/* the grade and the signal arrive with the chrome, not before */
+.js .hero:is([data-intro="opening"],[data-intro="running"]) :is(.hero__grade,.hero__bloom,.hero__signal){opacity:0}
+.js .hero[data-intro="done"] :is(.hero__grade,.hero__bloom){transition:opacity 900ms var(--ease-out)}
+.js .hero[data-intro="done"] .hero__signal{transition:opacity 1200ms var(--ease-out)}
+
+.hero__inner{
+  align-self:end;inline-size:100%;max-inline-size:var(--maxw);
+  margin-inline:auto;padding-inline:var(--gutter);
+}
+.hero__eyebrow{margin-block-end:clamp(.9rem,2.2vh,1.6rem)}
+.hero__title{
+  font-size:var(--step-6);font-weight:600;line-height:.92;letter-spacing:-.045em;
+  text-transform:uppercase;max-inline-size:15ch;
+  text-shadow:0 2px 40px color-mix(in srgb,var(--ink-900) 55%,transparent);
+}
+.hero__title .ln{display:block;overflow:hidden;padding-block-end:.02em}
+.hero__title .ln b{display:block;font-weight:inherit;will-change:transform}
+/* held flat while the opening runs, then rises once the film has been absorbed */
+.js .hero:is([data-intro="opening"],[data-intro="running"]) :is(.hero__inner,.hero__foot){opacity:0;visibility:hidden}
+.js .hero:is([data-intro="opening"],[data-intro="running"]) .hero__title .ln b{transform:translateY(106%)}
+.js .hero[data-intro="done"] .hero__title .ln b{
+  transform:translateY(106%);
+  animation:riseIn 1150ms var(--ease-out) forwards;
+  animation-delay:calc(var(--i,0)*110ms + 60ms);
+}
+@keyframes riseIn{to{transform:none}}
+
+.hero__sub{margin-block-start:clamp(1.1rem,2.8vh,1.9rem);max-inline-size:46ch;
+  font-size:var(--step-1);line-height:1.45;color:var(--fg-2)}
+.hero__note{margin-block-start:.8rem;font-size:var(--step--1);color:var(--fg-4)}
+.hero__cta{display:flex;flex-wrap:wrap;gap:var(--sp-3);margin-block-start:clamp(1.4rem,3.2vh,2.2rem)}
+.hero__ctanote{margin-block-start:.85rem;font-size:var(--step--2);color:var(--fg-4)}
+
+.js .hero:is([data-intro="opening"],[data-intro="running"])
+  :is(.hero__eyebrow,.hero__sub,.hero__note,.hero__cta,.hero__ctanote,.hero__foot){opacity:0}
+.js .hero[data-intro="done"] :is(.hero__eyebrow,.hero__sub,.hero__note,.hero__cta,.hero__ctanote,.hero__foot){
+  opacity:0;animation:fadeUp 900ms var(--ease-out) forwards;
+}
+.js .hero[data-intro="done"] .hero__eyebrow{animation-delay:0ms}
+.js .hero[data-intro="done"] .hero__sub{animation-delay:420ms}
+.js .hero[data-intro="done"] .hero__note{animation-delay:500ms}
+.js .hero[data-intro="done"] .hero__cta{animation-delay:580ms}
+.js .hero[data-intro="done"] .hero__ctanote{animation-delay:660ms}
+.js .hero[data-intro="done"] .hero__foot{animation-delay:780ms}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* hero footer rail */
+.hero__foot{
+  inline-size:100%;max-inline-size:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;gap:var(--sp-5);
+  margin-block-start:clamp(1.8rem,4.5vh,3.2rem);
+}
+.scrollcue{display:inline-flex;align-items:center;gap:.8rem;min-block-size:44px;
+  font-size:var(--step--2);letter-spacing:.18em;text-transform:uppercase;color:var(--fg-3);
+  transition:color var(--t-2) var(--ease-out)}
+.scrollcue:hover{color:var(--fg)}
+.scrollcue__rail{position:relative;inline-size:1px;block-size:36px;background:var(--line);overflow:hidden}
+.scrollcue__rail::after{content:"";position:absolute;inset-inline:0;block-size:13px;
+  background:var(--cer-400);animation:cueRun 2.6s var(--ease-in-out) infinite}
+@keyframes cueRun{0%{transform:translateY(-15px)}60%,100%{transform:translateY(40px)}}
+
+.filmctl{display:flex;align-items:center;gap:.8rem;color:var(--fg-3);font-size:var(--step--2)}
+.filmctl__btn{display:grid;place-items:center;inline-size:40px;block-size:40px;border-radius:50%;
+  border:1px solid var(--line);
+  transition:border-color var(--t-2) var(--ease-out),background var(--t-2) var(--ease-out)}
+.filmctl__btn:hover{border-color:var(--cer-500);background:color-mix(in srgb,var(--cer-600) 18%,transparent)}
+.filmctl__btn svg{inline-size:10px;block-size:11px;fill:currentColor}
+.filmctl__btn .i-pause{display:none}
+.filmctl__btn[aria-pressed="true"] .i-pause{display:block}
+.filmctl__btn[aria-pressed="true"] .i-play{display:none}
+.filmctl__bar{inline-size:clamp(44px,7vw,90px);block-size:2px;background:var(--line);overflow:hidden}
+.filmctl__bar i{display:block;block-size:100%;inline-size:var(--p,0%);background:var(--cer-400)}
+
+@media (max-width:719px){
+  .hero{padding-block-start:6.2rem}
+  .hero__media img,.hero__media video{object-position:76% 30%}
+  .hero__grade{
+    background:
+      linear-gradient(to top,
+        color-mix(in srgb,var(--ink-900) 97%,transparent) 0%,
+        color-mix(in srgb,var(--ink-900) 88%,transparent) 27%,
+        color-mix(in srgb,var(--ink-900) 32%,transparent) 60%,
+        color-mix(in srgb,var(--ink-900) 10%,transparent) 100%),
+      linear-gradient(95deg,color-mix(in srgb,var(--ink-900) 44%,transparent),transparent 60%);
+  }
+  .hero__title{max-inline-size:11ch;letter-spacing:-.04em}
+  .hero__sub{font-size:var(--step-0);max-inline-size:38ch}
+  .hero__cta{flex-direction:column;align-items:stretch}
+  .hero__cta .btn{inline-size:100%}
+  .scrollcue span{display:none}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .js .hero[data-intro="running"] .hero__media{animation:none;-webkit-mask-image:none;mask-image:none}
+  .js .hero[data-intro] .hero__title .ln b{transform:none;animation:none}
+  .js .hero[data-intro="done"] :is(.hero__eyebrow,.hero__sub,.hero__note,.hero__cta,.hero__ctanote,.hero__foot){
+    opacity:1;animation:none}
+  .scrollcue__rail::after{animation:none;transform:translateY(11px)}
+  .menu[data-open="true"] a{opacity:1;transform:none;animation:none}
+}
+
+
+/* ── short viewports ──────────────────────────────────────────────────────
+   A laptop in split view, a phone in landscape, a browser with three toolbars.
+   The hero is bottom-aligned, so when the block outgrows the row it rides up
+   under the glass bar. Give the height back rather than clipping the type. */
+@media (max-height:780px) and (min-width:720px){
+  .hero{padding-block-start:clamp(5rem,9vh,6.5rem)}
+  .hero__sub{font-size:var(--step-0);max-inline-size:42ch}
+  .hero__eyebrow{margin-block-end:.7rem}
+}
+@media (max-height:620px){
+  .hero{padding-block-start:4.4rem;min-block-size:max(520px,100svh)}
+  .hero__title{font-size:clamp(1.6rem,4.4vw,3rem)}
+  .hero__sub{font-size:var(--step--1)}
+  .hero__cta{margin-block-start:1rem}
+  .hero__foot{margin-block-start:1.1rem}
+}
+/* phone landscape: the film is a band, the type sits under it on flat ink */
+@media (max-height:520px) and (orientation:landscape){
+  .hero{min-block-size:auto;padding-block:5rem 1.5rem}
+}

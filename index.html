@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ANERVA — Neural Architecture</title>
+<meta name="theme-color" content="#04101c">
+<meta name="description" content="ANERVA trains the brain–body system for stability, clarity, self-regulation and adaptive performance under real-world demand. Language for what you already sense.">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="The system beneath your performance.">
+<meta property="og:description" content="A developmental and performance system in the discipline of Neural Architecture. Not therapy. Not medical treatment.">
+<meta property="og:image" content="assets/film/poster-1920.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/anerva-mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/anerva-lockup.png">
+
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/playfair-display-normal-latin.woff2" crossorigin>
+<link rel="preload" as="image" href="assets/film/poster-1920.jpg" fetchpriority="high">
+
+<link rel="stylesheet" href="assets/css/anerva.css">
+<link rel="stylesheet" href="assets/css/hero.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/spine.css">
+<link rel="stylesheet" href="assets/css/rhythm.css">
+<link rel="stylesheet" href="assets/css/figma.css">
+
+<script>
+/* Set before the document finishes loading, or the browser restores the previous
+   scroll position and the opening aperture runs over a mid-page view. */
+document.documentElement.classList.add('js');
+try{ if(sessionStorage.getItem('anerva:seen')!=='1') history.scrollRestoration='manual'; }catch(e){}
+</script>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ════════════════════════ THE RAIL ════════════════════════
+     Chapter, elapsed film, state, contents — and the honesty telemetry.
+     "SENT 0 · STORED 0 · 3P 0" is literal and verifiable: this page makes
+     no network request beyond its own assets. -->
+<aside class="rail" aria-label="Film and section state">
+  <a class="rail__mark" href="#top" aria-label="ANERVA — home"><img src="assets/anerva-mark.svg" alt="" width="22" height="16"></a>
+  <div class="rail__state">
+    <span class="rail__ch" id="railCh">00</span>
+    <span class="rail__name" id="railName">Hero</span>
+    <span class="rail__time" id="railTime">0.0s / 13.8s</span>
+    <span class="rail__hold" id="railHold" data-on="false">Hold</span>
+  </div>
+    <nav class="rail__toc" aria-label="Contents">
+    <a href="#problem">The problem</a>
+    <a href="#framework">Neural Architecture</a>
+    <a href="#pathways">Pathways</a>
+    <a href="#measurement">What we know</a>
+  </nav>
+  <p class="rail__tele" id="railTele">Sent <b>0</b> · Stored <b>0</b> · 3P <b>0</b></p>
+  <span class="rail__prog" aria-hidden="true"><i id="railProg"></i></span>
+</aside>
+<div class="railtop" aria-hidden="true"><i id="railTop"></i></div>
+<p class="railchip" aria-hidden="true"><span id="railChip">01 / 04</span></p>
+
+<!-- ════════════════════════ NAV ════════════════════════ -->
+<header class="nav" id="nav" data-stuck="false">
+  <a class="nav__brand" href="#top" aria-label="ANERVA — home">
+    <img src="assets/anerva-lockup.png" alt="ANERVA" width="1020" height="180" decoding="async">
+  </a>
+    <nav class="nav__links" aria-label="Sections">
+    <a href="#problem">The problem</a>
+    <a href="#framework">Neural Architecture</a>
+    <a href="#pathways">Pathways</a>
+    <a href="#measurement">What we know</a>
+  </nav>
+  <a class="btn btn--primary" href="#begin">Begin</a>
+  <button class="nav__menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+    <i></i><i></i><i></i>
+  </button>
+</header>
+
+<div class="menu" id="menu" data-open="false" aria-hidden="true">
+  <a href="#problem" style="--i:0">The problem <span>01</span></a>
+  <a href="#framework" style="--i:1">Neural Architecture <span>02</span></a>
+  <a href="#pathways" style="--i:2">Pathways <span>03</span></a>
+  <a href="#measurement" style="--i:3">What we know <span>04</span></a>
+  <a class="btn btn--primary" href="#begin" style="--i:4">Begin</a>
+</div>
+
+<!-- The opening: the film is first seen through the ANERVA mark, then absorbed. -->
+<div class="opening" id="opening" aria-hidden="true"><p class="opening__cap">Neural Architecture</p></div>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ════════════════════════ 1 · HERO ════════════════════════ -->
+<section class="hero" id="hero" data-intro="running" aria-labelledby="heroTitle">
+  <div class="hero__media" aria-hidden="true">
+    <img class="hero__poster" src="assets/film/poster-1920.jpg" alt="" width="1920" height="1080" fetchpriority="high" decoding="async">
+    <video class="hero__video" id="heroVideo" muted loop playsinline preload="none"
+           poster="assets/film/poster-1920.jpg" tabindex="-1" aria-hidden="true"></video>
+  </div>
+  <div class="hero__grade" aria-hidden="true"></div>
+  <div class="hero__bloom" aria-hidden="true"></div>
+  <canvas class="hero__signal" id="heroSignal" aria-hidden="true"></canvas>
+  <p class="sr-only">Background film: a close portrait, lit by slow ribbons of blue and lavender light moving across the frame. The film is silent and decorative.</p>
+
+  <div class="hero__inner">
+    <p class="eyebrow hero__eyebrow">Neural Architecture</p>
+    <h1 class="hero__title" id="heroTitle">
+      <span class="ln" style="--i:0"><b>The system</b></span>
+      <span class="ln" style="--i:1"><b>beneath your</b></span>
+      <span class="ln" style="--i:2"><b>performance.</b></span>
+    </h1>
+    <p class="hero__sub">ANERVA trains the brain–body system for stability, clarity, self-regulation and adaptive performance under real-world demand.</p>
+    <p class="hero__note">A developmental and performance system. Not therapy. Not medical treatment.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#begin">Apply to ANERVA
+        <svg class="btn__arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M1 5h13M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></a>
+      <a class="btn btn--ghost" href="#measurement">What this is, and what it is not</a>
+    </div>
+    <p class="hero__ctanote">Consent first, then the questions. No account. No app.</p>
+  </div>
+
+  <div class="hero__foot">
+    <a class="scrollcue" href="#problem">
+      <span class="scrollcue__rail" aria-hidden="true"></span>
+      <span>The pattern beneath it</span>
+    </a>
+    <div class="filmctl" role="group" aria-label="Background film">
+      <button class="filmctl__btn" id="filmBtn" type="button" aria-pressed="false" aria-label="Play the background film">
+        <svg class="i-play" viewBox="0 0 12 14" aria-hidden="true"><path d="M1 1l10 6-10 6V1z"/></svg>
+        <svg class="i-pause" viewBox="0 0 12 14" aria-hidden="true"><path d="M1 1h3.2v12H1zM7.8 1H11v12H7.8z"/></svg>
+      </button>
+      <span class="filmctl__bar" aria-hidden="true"><i id="filmBar"></i></span>
+      <span class="mono" id="filmMsg"></span>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ════════════════════════ 2B · POSITIONING BAND ════════════════════════ -->
+
+
+
+<!-- ════════════════════════ F0 · HIGH PERFORMANCE / DYSREGULATION ════════════════════════ -->
+<section class="lite coexist" id="coexist" aria-labelledby="coexistH">
+  <div class="wrap">
+    <div class="coexist__top">
+      <h2 id="coexistH" class="rise">High performance can coexist with dysregulation.</h2>
+      <div class="coexist__right">
+        <p class="coexist__lede rise" style="--i:1">The difference is often revealed in the <b>effort</b>, <b>rigidity</b>, and <b>recovery cost</b> required to sustain it.</p>
+      </div>
+    </div>
+
+    <!-- The traces carry no axis and no number: there is no measurement behind
+         them, and drawing one would be a claim. -->
+    <ol class="traces" role="list">
+      <li class="trace rise">
+        <span class="trace__n">01</span>
+        <svg class="trace__art" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 90C105 98 145 48 300 8M0 83C105 91 145 43 300 3M0 76C105 84 145 38 300-2M0 69C105 77 145 33 300-7M0 62C105 70 145 28 300-12M0 55C105 63 145 23 300-17M0 48C105 56 145 18 300-22"/>
+        </svg>
+        <span class="trace__label">Effort</span>
+      </li>
+      <li class="trace rise" style="--i:1">
+        <span class="trace__n">02</span>
+        <svg class="trace__art" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 92L96 66 157 2 273 69 244 100M0 94L99 73 157 16 258 76 236 104M0 96L103 80 157 30 244 83 228 108M0 98L106 87 157 44 230 90 220 112M0 100L110 94 157 58 216 97 212 116M0 102L113 101 157 72 202 104 204 120"/>
+        </svg>
+        <span class="trace__label">Rigidity</span>
+      </li>
+      <li class="trace rise" style="--i:2">
+        <span class="trace__n">03</span>
+        <svg class="trace__art" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 79C69-72 116 103 300 72M0 83C69-51 116 107 300 76M0 87C69-30 116 111 300 80M0 91C69-9 116 115 300 84M0 95C69 12 116 119 300 88M0 99C69 33 116 123 300 92"/>
+        </svg>
+        <span class="trace__label">Recovery cost</span>
+      </li>
+    </ol>
+
+    <p class="coexist__more rise">
+      <a href="#framework">Explore the architecture
+        <svg width="15" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M1 5h13M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg>
+      </a>
+    </p>
+  </div>
+</section>
+
+
+
+<!-- ════════════════════════ F2 · THE PROBLEM ════════════════════════ -->
+<section class="lite problem" id="problem" aria-labelledby="problemH">
+  <div class="wrap">
+    <div class="problem__head">
+      <div>
+        <p class="eyebrow rise">The problem</p>
+        <h2 id="problemH" class="rise" style="--i:1;margin-block-start:.8rem">You’re not indisciplined; your system needs regulation.</h2>
+      </div>
+      <a class="btn btn--ghost rise" style="--i:2" href="#begin">Connect with us</a>
+    </div>
+
+    <div class="rail-x rise" id="signalRail" style="--i:3" role="group" aria-label="What this tends to look like">
+      <figure class="signal">
+        <img src="assets/faces/p1.jpg" alt="" width="540" height="720" loading="lazy" decoding="async">
+        <figcaption><b>Constant pressure</b><small>Demand arrives faster than recovery does.</small></figcaption>
+      </figure>
+      <figure class="signal">
+        <img src="assets/faces/p2.jpg" alt="" width="540" height="720" loading="lazy" decoding="async">
+        <figcaption><b>Emotional overwhelm</b><small>The system moves into alarm before the situation can be organised.</small></figcaption>
+      </figure>
+      <figure class="signal">
+        <img src="assets/faces/p3.jpg" alt="" width="540" height="720" loading="lazy" decoding="async">
+        <figcaption><b>Overthinking</b><small>Thought volume rises when the body cannot signal safety.</small></figcaption>
+      </figure>
+      <figure class="signal">
+        <img src="assets/faces/p4.jpg" alt="" width="540" height="720" loading="lazy" decoding="async">
+        <figcaption><b>Fatigue despite rest</b><small>Rest happens, but it no longer restores.</small></figcaption>
+      </figure>
+      <figure class="signal">
+        <img src="assets/faces/p5.jpg" alt="" width="540" height="720" loading="lazy" decoding="async">
+        <figcaption><b>Constant activation</b><small>Output is held up by effort that cannot be sustained.</small></figcaption>
+      </figure>
+      <figure class="signal">
+        <img src="assets/faces/p6.jpg" alt="" width="540" height="720" loading="lazy" decoding="async">
+        <figcaption><b>Loss of clarity under load</b><small>Interpretation and action come apart once pressure arrives.</small></figcaption>
+      </figure>
+    </div>
+    <div class="rail-x__nav rise" style="--i:4">
+      <button type="button" data-rail="-1" aria-label="Previous"><svg width="15" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M15 5H2M6 1L2 5l4 4" stroke="currentColor" stroke-width="1.3"/></svg></button>
+      <button type="button" data-rail="1" aria-label="Next"><svg width="15" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M1 5h13M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></button>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ════════════════════════ F4 · THE CONNECTED SYSTEM ════════════════════════ -->
+<section class="connected" id="connected" aria-labelledby="connectedH">
+  <div class="connected__bg" aria-hidden="true">
+    <img src="assets/stills/wide.jpg" alt="" width="1600" height="902" loading="lazy" decoding="async">
+  </div>
+  <div class="wrap">
+    <h2 class="connected__lead rise" id="connectedH">ANA maps energy, state, cognition, behaviour and identity as a connected system, re-sequencing them for better performance.</h2>
+    <p class="connected__sub rise" style="--i:1">Not therapy. Not coaching. Not motivation. Not meditation alone. Each of these addresses a single layer. ANA addresses the relationships between layers, which is where the pattern is actually held.</p>
+    <div class="shifts">
+      <div class="shift rise"><span>Reaction</span><b>Response</b></div>
+      <div class="shift rise" style="--i:1"><span>Dysregulation</span><b>Stability</b></div>
+      <div class="shift rise" style="--i:2"><span>Overthinking</span><b>Clarity</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ F5 · FOUR FUNCTIONAL DOMAINS ════════════════════════ -->
+<section class="sec loop" id="framework" aria-labelledby="loopH">
+  <div class="wrap">
+    <header class="sec__head sec__head--wide">
+      <p class="eyebrow rise">Four functional domains</p>
+      <h2 id="loopH" class="headline rise" style="--i:1">A closed feedback loop, not four services.</h2>
+    </header>
+    <p class="boundary rise" style="--i:2">A domain describes where usable capacity is currently constrained — never a diagnosis, identity or personality type. ANERVA uses a proprietary, non-diagnostic category and Operating Mode framework.</p>
+
+    <div class="loop__stage" id="loopStage" role="group" aria-label="The four functional domains">
+      <canvas class="loop__canvas" id="loopCanvas" aria-hidden="true"></canvas>
+      <div class="loop__core" aria-hidden="true"><img src="assets/anerva-mark.svg" alt="" width="180" height="131"></div>
+    </div>
+    <div class="loop__read" id="loopRead" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ════════════════════════ F6 · PROGRAM PATHWAYS ════════════════════════ -->
+<section class="pathways-f" id="pathways" aria-labelledby="pathwaysH">
+  <div class="wrap">
+    <p class="eyebrow rise">Program pathways</p>
+    <h2 id="pathwaysH" class="rise" style="--i:1;margin-block-start:.8rem">Two depths of the same architecture.</h2>
+    <div class="pathways-f__grid">
+      <img class="pathways-f__mark rise" src="assets/anerva-mark.svg" alt="" width="300" height="218" loading="lazy" decoding="async">
+      <div class="pcards">
+        <article class="pcard rise">
+          <div class="pcard__top">
+            <h3 class="pcard__name">ANA Core</h3>
+            <span class="pcard__dur">6 weeks</span>
+          </div>
+          <dl>
+            <div><dt>Ideal for</dt><dd>Individuals carrying sustained load who need stability restored quickly.</dd></div>
+            <div><dt>Focus</dt><dd>Bioenergetic stability and nervous system regulation.</dd></div>
+            <div><dt>Outcome</dt><dd>A regulated baseline and a repeatable daily operating state.</dd></div>
+          </dl>
+          <a class="btn" href="#begin" data-needs-destination>Apply for ANA Core</a>
+        </article>
+        <article class="pcard rise" style="--i:1">
+          <div class="pcard__top">
+            <h3 class="pcard__name">ANA Premium</h3>
+            <span class="pcard__dur">12 weeks</span>
+          </div>
+          <dl>
+            <div><dt>Ideal for</dt><dd>Founders, executives and clinicians rebuilding at identity level.</dd></div>
+            <div><dt>Focus</dt><dd>All four domains, integrated, with real-time intervention.</dd></div>
+            <div><dt>Outcome</dt><dd>Long-term architecture: response, clarity and consistency by structure.</dd></div>
+          </dl>
+          <a class="btn" href="#begin" data-needs-destination>Apply for ANA Premium</a>
+        </article>
+      </div>
+    </div>
+    <p class="meta rise" style="margin-block-start:clamp(1.4rem,3.4vh,2.2rem);color:#bcd9f5;max-inline-size:68ch">Six and twelve weeks are nominal structures, not a schedule. Change timelines vary widely between individuals, which is why we measure at week 0 and again at weeks 6 and 12. Phases advance on the architect’s explicit decision after a session, never on a calendar.</p>
+  </div>
+</section>
+
+
+
+<svg class="seam seam--flip" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true" style="--len:2300"><path d="M0 46C50 46 50 14 100 14S150 46 200 46 250 14 300 14 350 46 400 46 450 14 500 14 550 46 600 46 650 14 700 14 750 46 800 46 850 14 900 14 950 46 1000 46 1050 14 1100 14 1150 46 1200 46"/></svg>
+
+
+<!-- ════════════════════════ 6 · WHAT WE KNOW ════════════════════════ -->
+<svg class="seam" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true" style="--len:3400"><path d="M0 46C31 46 31 14 62 14S93 46 125 46 156 14 187 14 218 46 250 46 281 14 312 14 343 46 375 46 406 14 437 14 468 46 500 46 531 14 562 14 593 46 625 46 656 14 687 14 718 46 750 46 781 14 812 14 843 46 875 46 906 14 937 14 968 46 1000 46 1031 14 1062 14 1093 46 1125 46 1156 14 1187 14 1200 30 1200 46"/></svg>
+<section class="sec paper" id="measurement" aria-labelledby="measurementH" data-in="false">
+  <div class="paper__sheet" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="sec__head sec__head--wide">
+      <p class="eyebrow rise">What we know, and what we do not</p>
+      <h2 id="measurementH" class="headline rise" style="--i:1">We would rather be exact than impressive.</h2>
+    </header>
+
+    <div class="scope rise" style="--i:2">
+      <h3>Scope</h3>
+      <p>ANERVA is developmental and performance-oriented. It is not psychotherapy, psychiatry, counselling or a mental-health crisis service. It is not medical diagnosis or treatment, and it is not a substitute for a licensed clinician. It is not a personality test that permanently categorises a person.</p>
+      <p>ANERVA may support people who experience stress, overwhelm, fatigue, reactivity or impaired focus. Its role in that is training and developmental support, not treatment of those conditions.</p>
+      <p>Adults only. Exclusion is not a judgement of worth. Referral is an act of care.</p>
+      <p>The seven categories and eight modes are proprietary ANERVA constructs, and their practical usefulness does not permit us to present them as validated scientific types. Change timelines vary widely between individuals, which is why we measure at week 0 and again at weeks 6 and 12.</p>
+      <p>ANERVA is not a crisis service and is not monitored live. If you are at immediate risk, or something needs urgent medical or psychiatric attention, contact your local emergency services or a qualified clinician.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ════════════════════════ 8 · APPLY ════════════════════════ -->
+<section class="sec begin" id="begin" aria-labelledby="beginH">
+  <div class="begin__glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="begin__inner">
+      <p class="eyebrow rise" style="justify-content:center">Apply</p>
+      <h2 id="beginH" class="begin__title rise" style="--i:1">Begin with<br><em>a suitability application.</em></h2>
+      <p class="begin__sub rise" style="--i:2">Applications are reviewed individually to understand fit, readiness, goals, and relevant participation boundaries. The application is not a diagnosis and does not guarantee enrolment. If there is a suitable pathway, the ANERVA team will contact you with the next step.</p>
+
+      <p class="rise" style="--i:3">
+        <a class="btn btn--primary" href="#begin" id="ctaAssessment" data-needs-destination>Apply to ANERVA
+          <svg class="btn__arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M1 5h13M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></a>
+      </p>
+      <p class="begin__micro rise" id="ctaNote" style="--i:4">This site is not monitored live. Applications are read during business hours, IST.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ════════════════════════ FOOTER ════════════════════════ -->
+<footer class="foot-f">
+  <p class="foot-f__wordmark" aria-hidden="true">ANERVA</p>
+  <div class="wrap">
+
+    <div class="foot-f__cols">
+      <div class="foot-f__col">
+        <h2 class="foot-f__h">Nerva Systems</h2>
+        <p class="foot-f__note">ANERVA is the brand of Nerva Systems.</p>
+        <ul class="foot-f__list" role="list">
+          <li><a href="mailto:drkavitha.a@anerva.com">drkavitha.a@anerva.com</a></li>
+          <li><a href="tel:+919765173516">+91 97651 73516</a></li>
+          <li><span>Mumbai, India</span></li>
+        </ul>
+      </div>
+
+      <nav class="foot-f__col" aria-label="Explore">
+        <h2 class="foot-f__h">Explore</h2>
+        <ul class="foot-f__list" role="list">
+          <li><a href="#framework">Architecture</a></li>
+          <li><a href="#connected">Framework</a></li>
+          <li><a href="#pathways">Pathways</a></li>
+          <li><a href="#problem">How it works</a></li>
+          <li><a href="#measurement">Insights</a></li>
+        </ul>
+      </nav>
+
+      <nav class="foot-f__col" aria-label="Legal">
+        <h2 class="foot-f__h">Legal</h2>
+        <ul class="foot-f__list" role="list">
+          <li><a href="#begin" data-needs-destination>Privacy policy</a></li>
+          <li><a href="#begin" data-needs-destination>Terms</a></li>
+          <li><a href="#begin" data-needs-destination>Accessibility</a></li>
+          <li><a href="#measurement">Developmental &amp; non-medical scope</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <p class="foot-f__scope">ANERVA is a developmental and performance programme. It is not medical or psychological treatment, it does not diagnose, and it is not a substitute for therapy, psychiatric care or medical advice. Where clinical care is indicated, we say so and refer. ANERVA is for adults aged 18 and over. ANERVA uses a proprietary, non-diagnostic category and Operating Mode framework.</p>
+
+    <div class="foot-f__legal">
+      <span>© 2026 Nerva Systems. ANERVA™ and Anerva Neural Architecture™ are trade marks of Nerva Systems.</span>
+      <span>ANERVA is not a crisis service and is not monitored live.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/anerva.js" type="module"></script>
+</body>
+</html>
